@@ -22,14 +22,17 @@ public class UserApiTest {
     public void testGetFans() {
         UserImpl imp = new UserImpl();
         String userId = "1792951112";
-        List<User> fans = imp.getFans(userId, 1);
-        fans.forEach(user -> {
-            System.out.println(user.getScreen_name() + ":");
-            System.out.println("\tid: " + user.getId());
-            System.out.println("\t粉丝数: " + user.getFollowers_count());
-            System.out.println("\t关注数: " + user.getFollow_count());
-        });
-        System.out.println(fans.size());
+        for (int i = 0; i < 5; i++) {
+            List<User> fans = imp.getFans(userId, 1);
+            fans.forEach(user -> {
+                System.out.println(user.getScreen_name() + ":");
+                System.out.println("\tid: " + user.getId());
+                System.out.println("\t粉丝数: " + user.getFollowers_count());
+                System.out.println("\t关注数: " + user.getFollow_count());
+            });
+            System.out.println(fans.size());
+        }
     }
+
 
 }
